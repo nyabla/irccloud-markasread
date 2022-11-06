@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "mark all as read",
+    "author": "nyabla.net",
+    "version": "0.1.0",
+  
+    "description": "mark all irccloud channels as read",
+    
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "content_scripts": [
+        {
+          "matches": ["*://*.irccloud.com/irc/*"],
+          "js": ["markasread.js"]
+        }
+    ],
+
+    "page_action": {
+        "default_title": "mark all as read",
+        "show_matches": ["*://*.irccloud.com/irc/*"],
+        "default_icon": "icon.svg"
+    },
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "markasread@nyabla.net"
+        }
+    }
+}
+  
